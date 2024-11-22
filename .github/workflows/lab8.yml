@@ -37,7 +37,7 @@ jobs:
         run: echo "LUCKEY_NUMBER=1234567" >> $GITHUB_OUTPUT
 
       - name: Echo the output set in the previous step
-        run: echo "My lucky number is ${{ steps.lucky_number_step.output.LUCKEY_NUMBER }}
+        run: echo "My lucky number is ${{ steps.lucky_number_step.output.LUCKEY_NUMBER }}"
 
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
         run: echo "::summary::Exploring Workflow Commands :thumbsup:"
