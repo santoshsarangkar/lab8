@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Set environment variable with "key" as "foo" and "value" as "bar" 
         run: | 
-          export foo = "bar"
+          foo="bar"
           echo $foo >> $GITHUB_ENV
           echo $foo
       - name: Echo the environment variable "foo" from previous step
