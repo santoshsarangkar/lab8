@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: Set environment variable with "key" as "foo" and "value" as "bar" 
         run: | 
-          foo="bar"
-          echo $foo
-          echo "foo=$foo" >> $GITHUB_ENV
+          echo "foo=bar" >> $GITHUB_ENV
       - name: Echo the environment variable "foo" from previous step
         run: echo "Hello, $foo"
 
@@ -23,7 +21,7 @@ jobs:
           api_key: 1aO764b_4e59_p@$Sw0RdAStvdf-19ofvs4F
         run: |
           echo "Un-Masked key = $api_key"
-          echo "::mark-key::$api_key"
+          echo "::add-mask::$api_key"
           echo "Masked key = $api_key"
 
       - name: Create a warning Log for this message "This is a warning message."
@@ -40,4 +38,4 @@ jobs:
         run: echo "My lucky number is ${{ steps.lucky_number_step.output.LUCKEY_NUMBER }}"
 
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
-        run: echo "::summary::Exploring Workflow Commands :thumbsup:"
+        run: echo "Exploring Workflow Commands :thumbsup" >> $GITHUB_STEP_SUMMARY
